@@ -17,8 +17,19 @@
   },
   "homepage": "https://github.com/summer2200/ES6-practice#readme",
   "devDependencies": {
+    "chai": "^4.1.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-mocha": "^5.0.0",
+    "mocha": "^5.0.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^15.2.0",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
