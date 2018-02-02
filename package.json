@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/summer2200/ES6-practice/issues"
   },
-  "homepage": "https://github.com/summer2200/ES6-practice#readme"
+  "homepage": "https://github.com/summer2200/ES6-practice#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1"
+  }
 }
