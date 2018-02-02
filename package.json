@@ -1,0 +1,19 @@
+{
+  "name": "es6-practice",
+  "version": "1.0.0",
+  "description": "A small practice for ES2015.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/summer2200/ES6-practice.git"
+  },
+  "author": "xue.li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/summer2200/ES6-practice/issues"
+  },
+  "homepage": "https://github.com/summer2200/ES6-practice#readme"
+}
