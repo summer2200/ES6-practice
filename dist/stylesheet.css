@@ -10,3 +10,9 @@ main {
   width: 95%;
   margin: auto;
 }
+
+ 
+header ul {
+	list-style: none;
+	display: flex;
+}
