@@ -4,6 +4,15 @@ body {
   font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 main {
   width: 70%;
   margin: auto;
@@ -19,15 +28,19 @@ main:after {
 }
 
 header {
-	background-color:  black;
-  /*font-family:       "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;*/
+	background-color:  rgb(27, 27, 27);
   color:             white;
   font-weight:       bold;
   text-align: center;
 }
+
+header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 30px;
+}
  
 header ul,h1 {
-	list-style: none;
 	display: inline-block;
 }
 
@@ -36,8 +49,25 @@ header ul li{
 	padding: 20px 15px;
 }
 
+header ul li:hover {
+	background-color: black;
+	cursor: pointer;
+}
+
 header nav img {
-	width: 40px;
+	width: 33px;
+}
+
+header nav .nav-bar {
+	width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.banner {
+	background-color: grey;
+  text-align: center;
 }
 
 footer {
@@ -74,6 +104,7 @@ section h1,a {
 }
 section .title {
 	border-bottom: 2px solid red;
+	padding-left: 10px;
 }
 
 section .title a:last-of-type {
@@ -83,10 +114,14 @@ section .title a:last-of-type {
 
 section .content ul {
 	list-style: none;
+	padding: 0;
 }
 
 section .content ul li {
 	display: inline-block;
+	width: 150px;
+	height: 200px;
+	padding: 0 0 10px 20px;
 }
 
 section .content ul li img {
@@ -95,6 +130,30 @@ section .content ul li img {
 
 section .content ul li a {
 	display: block;
+	font-size: 14px;
+}
+
+section .content ul li >.card {
+	position: relative;
+}
+section .content ul li >.card >.info {
+	padding: 0 5px;
+	height: 27px;
+	background-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	bottom: 3px;
+	left: 0;
+	right: 0;
+	color: rgb(230, 230, 230);
+}
+section .content ul li >.card >.info .fa-play-circle {
+	position: absolute;
+  right: 5px;
+  top: 5px;
+}
+section .content ul li >.card >.info .fa-play-circle:hover {
+	cursor: pointer;
+	color: white;
 }
 
 .web-play {
@@ -102,4 +161,8 @@ section .content ul li a {
 	bottom: 0;
 	width: 100%;
 	background-color: rgb(250, 250, 250);
+}
+
+.title .fa-dot-circle {
+	color: red;
 }

@@ -9,7 +9,7 @@ import del from "del";
 import mocha from "gulp-mocha";
 
 gulp.task('default', ['clean'], () => {
-  gulp.start('build-js', 'copy-css', 'copy-html', 'copy-img');
+  gulp.start('build-js', 'copy-css', 'copy-html', 'copy-img', 'copy-fonts');
 });
 
 gulp.task('clean', () => {
@@ -35,8 +35,13 @@ gulp.task('copy-html', () => {
 });
 
 gulp.task('copy-img', () => {
-  return gulp.src('src/**/*.png')
+  return gulp.src('src/**/*.{png,gif,jpg}')
     .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('copy-fonts', () => {
+  return gulp.src('src/assets/**/*')
+  .pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task('test', () => {
