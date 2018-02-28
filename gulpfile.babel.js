@@ -7,6 +7,9 @@ import browserify from "browserify";
 import source from "vinyl-source-stream";
 import del from "del";
 import mocha from "gulp-mocha";
+import browserSync from 'browser-sync';
+
+const reload = browserSync.reload;
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build-js', 'copy-css', 'copy-html', 'copy-img', 'copy-fonts');
@@ -48,3 +51,33 @@ gulp.task('test', () => {
   return gulp.src('test/**/*_test.js', {read: false})
   .pipe(mocha({repeater: 'dot'}));
 });
+
+gulp.task('build', ['default']);
+
+gulp.task('watch', ['build'], () => {
+  browserSync({
+    notify: false,
+    // Customize the Browsersync console logging prefix
+    logPrefix: 'ES6',
+    // Allow scroll syncing across breakpoints
+    scrollElementMapping: ['main', '.mdl-layout'],
+    // Run as an https by uncommenting 'https: true'
+    // Note: this uses an unsigned certificate which on first access
+    //       will present a certificate warning in the browser.
+    // https: true,
+    server: ['dist'],
+    port: 3000
+  });
+
+  gulp.watch(['src/**/*.html'], ['copy-html', reload]);
+  gulp.watch(['src/**/*.{png,gif,jpg}'], ['copy-img', reload]);
+  gulp.watch(['src/**/*.css'], ['copy-css', reload]);
+  gulp.watch(['src/app.js'], ['build-js', reload]);
+});
+
+
+
+
+
+
+
