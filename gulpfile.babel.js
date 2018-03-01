@@ -45,7 +45,7 @@ gulp.task('copy-html', () => {
 });
 
 gulp.task('copy-img', () => {
-  return gulp.src('src/**/*.{png,gif,jpg}')
+  return gulp.src('src/**/*.{png,gif,jpg,jpeg}')
     .pipe(gulp.dest('dist/'));
 });
 
@@ -77,7 +77,7 @@ gulp.task('watch', ['build'], () => {
   });
 
   gulp.watch(['src/**/*.html'], ['copy-html', reload]);
-  gulp.watch(['src/**/*.{png,gif,jpg}'], ['copy-img', reload]);
+  gulp.watch(['src/**/*.{png,gif,jpg,jpeg}'], ['copy-img', reload]);
   gulp.watch(['src/**/*.scss'], ['sass', reload]);
   gulp.watch(['src/app.js'], ['build-js', reload]);
 });
