@@ -8,11 +8,12 @@ import source from "vinyl-source-stream";
 import del from "del";
 import mocha from "gulp-mocha";
 import browserSync from 'browser-sync';
+import sass from 'gulp-sass';
 
 const reload = browserSync.reload;
 
 gulp.task('default', ['clean'], () => {
-  gulp.start('build-js', 'copy-css', 'copy-html', 'copy-img', 'copy-fonts');
+  gulp.start('build-js', 'sass', 'copy-html', 'copy-img', 'copy-fonts');
 });
 
 gulp.task('clean', () => {
@@ -29,6 +30,12 @@ gulp.task('build-js', () => {
 
 gulp.task('copy-css', () => {
   return gulp.src('src/**/*.css')
+    .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('sass', () => {
+  return gulp.src('src/**/*.scss')
+    .pipe(sass())
     .pipe(gulp.dest('dist/'));
 });
 
@@ -71,7 +78,7 @@ gulp.task('watch', ['build'], () => {
 
   gulp.watch(['src/**/*.html'], ['copy-html', reload]);
   gulp.watch(['src/**/*.{png,gif,jpg}'], ['copy-img', reload]);
-  gulp.watch(['src/**/*.css'], ['copy-css', reload]);
+  gulp.watch(['src/**/*.scss'], ['sass', reload]);
   gulp.watch(['src/app.js'], ['build-js', reload]);
 });
 

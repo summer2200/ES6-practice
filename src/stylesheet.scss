@@ -23,7 +23,7 @@ main {
 /*to clear the article and aside's float inside main*/
 main:after {
 	content: "";
-  display: table;
+  	display: table;
 	clear:both;
 }
 
@@ -165,4 +165,14 @@ section .content ul li >.card >.info .fa-play-circle:hover {
 
 .title .fa-dot-circle {
 	color: red;
+}
+
+
+$color-main: #000;
+.content {
+	.content-box {
+		height: 200px;
+		width: 100%;
+		background-color: $color-main;
+	}
 }
