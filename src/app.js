@@ -4,13 +4,13 @@
 // 	target: document.getElementsByTagName('main')[0]
 // })).run();
 
+import {getNewSigners} from './common/getSigners';
+
 document.getElementById('refreshSigners').onclick = function() {
-	var newReq = new XMLHttpRequest();
-	newReq.open('GET', 'test.html');
-	newReq.send();
-	newReq.onreadystatechange = function() {
-		if(newReq.readyState === 4 && newReq.status === 200) {
-			document.getElementById('signerList').innerHTML = newReq.responseText;
+	var req = getNewSigners();
+	req.onreadystatechange = function() {
+		if(req.readyState === 4 && req.status === 200) {
+			document.getElementById('signerList').innerHTML = req.responseText;
 		} else {
 			return;
 		}
